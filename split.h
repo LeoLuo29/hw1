@@ -17,6 +17,5 @@ struct Node
 };
 
 void split(Node*& in, Node*& odds, Node*& evens);
-void addTarget(Node*& linkedList, Node*& target);
 
 #endif

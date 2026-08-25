@@ -14,11 +14,12 @@ the function below should be the only one in this file.
 #include <cstddef>
 
 /* Add a prototype for a helper function here if you need */
+void addTarget(Node*& linkedList, Node*& target);   // prototype
 
 void split(Node*& in, Node*& odds, Node*& evens){
   /* Add code here */
   // WRITE YOUR CODE HERE
-  Node*& nextNode = in -> next;
+  Node* nextNode = in -> next;
   if (in == nullptr) return;
   else if (((in -> value) % 2) == 0){ // current is even
     if (evens == nullptr){
@@ -34,6 +35,7 @@ void split(Node*& in, Node*& odds, Node*& evens){
     }
     else addTarget(odds, in);
   }
+  in = nullptr;
   return split(nextNode, odds, evens);
 }
 
