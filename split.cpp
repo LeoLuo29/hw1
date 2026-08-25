@@ -19,9 +19,14 @@ void addTarget(Node*& linkedList, Node*& target);   // prototype
 void split(Node*& in, Node*& odds, Node*& evens){
   /* Add code here */
   // WRITE YOUR CODE HERE
-  Node* nextNode = in -> next;
   if (in == nullptr) return;
-  else if (((in -> value) % 2) == 0){ // current is even
+
+  Node* nextNode;
+  if (in != nullptr) nextNode = in -> next;
+  else nextNode = nullptr;
+
+
+  if (((in -> value) % 2) == 0){ // current is even
     if (evens == nullptr){
       evens = in; 
       evens -> next = nullptr;
