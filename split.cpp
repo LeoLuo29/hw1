@@ -19,13 +19,13 @@ void split(Node*& in, Node*& odds, Node*& evens){
   /* Add code here */
   // WRITE YOUR CODE HERE
   Node*& nextNode = in -> next;
-  if (in == NULL) return;
+  if (in == nullptr) return;
   else if (((in -> value) % 2) == 0){ // current is even
-    if (evens == NULL) evens = in; 
+    if (evens == nullptr) evens = in; 
     else addTarget(evens, in);
   }
   else{ // current is odd
-    if (odds == NULL) odds = in;
+    if (odds == nullptr) odds = in;
     else addTarget(odds, in);
   }
   return split(nextNode, odds, evens);
@@ -35,9 +35,9 @@ void split(Node*& in, Node*& odds, Node*& evens){
 
 
 void addTarget(Node*& linkedList, Node*& target){
-  if (linkedList -> next == NULL){
+  if (linkedList -> next == nullptr){
     linkedList -> next = target;
-    linkedList -> next -> next = NULL;
+    linkedList -> next -> next = nulltr;
     return;
   }
   return addTarget(linkedList -> next, target);
