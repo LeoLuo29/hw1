@@ -10,13 +10,13 @@ struct Node
   /**
    * Initializing constructor
    */
-  Node(int v, Node* n)
-  {
+  Node(int v, Node* n){
     value = v;
     next = n;
   }
 };
 
 void split(Node*& in, Node*& odds, Node*& evens);
+void addTarget(Node*& linkedList, Node*& target);
 
 #endif
