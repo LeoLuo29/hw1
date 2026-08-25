@@ -37,7 +37,7 @@ void split(Node*& in, Node*& odds, Node*& evens){
 void addTarget(Node*& linkedList, Node*& target){
   if (linkedList -> next == nullptr){
     linkedList -> next = target;
-    linkedList -> next -> next = nulltr;
+    linkedList -> next -> next = nullptr;
     return;
   }
   return addTarget(linkedList -> next, target);
