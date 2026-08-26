@@ -59,8 +59,8 @@ void ULListStr::push_front(const std::string& val){
       size_++;
   }
   else if( (tail_ -> last < ARRSIZE) ){
-      tail_ -> val[tail_ -> last] = val;
       tail_ -> last++;
+      tail_ -> val[ (tail_ -> last) -1] = val;
       size_++;
   }
   else{
