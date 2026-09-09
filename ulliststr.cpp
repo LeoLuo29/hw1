@@ -85,7 +85,8 @@ void ULListStr::pop_front(){
   else{
     Item* itemPtr = head_;
     head_ = head_ -> next;
-    head_ -> prev = NULL;
+    if (head_ == NULL) tail_ = NULL;
+    else head_ -> prev = NULL;
     delete itemPtr;
     size_--;
   }
@@ -101,7 +102,8 @@ void ULListStr::pop_back(){
   else{
     Item* itemPtr = tail_;
     tail_ = tail_ -> prev;
-    tail_ -> next = NULL;
+    if (tail_ == NULL) head_ = NULL;
+    else tail_ -> next = NULL;
     delete itemPtr;
     size_--;
   }
@@ -109,13 +111,13 @@ void ULListStr::pop_back(){
 
 
 std::string const & ULListStr::back() const{
-  if (empty()) return NULL;
+  if (empty()) throw std::invalid_argument("Empty list");
   return tail_ -> val[tail_ -> last - 1];
 }
 
 
 std::string const & ULListStr::front() const{
-  if (empty()) return NULL;
+  if (empty()) throw std::invalid_argument("Empty list");
   return head_ -> val[head_ -> first];
 }
 
